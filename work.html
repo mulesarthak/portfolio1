@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>work</title>
+</head>
+<body>
+    <!-- navigation bar -->
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 40px;
+      background-color: #fff;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      position: relative;
+    }
+
+    .navbar .logo img {
+      height: 40px;
+    }
+
+    .menu {
+      display: flex;
+      gap: 30px;
+    }
+
+    .menu a {
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 600;
+      color: #888;
+      text-transform: uppercase;
+      transition: color 0.3s ease;
+    }
+
+    .menu a.active {
+      color: #000;
+    }
+
+    .menu a:hover {
+      color: #444;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+
+    .menu-toggle span {
+      width: 25px;
+      height: 3px;
+      background-color: #333;
+      transition: 0.3s;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      .menu {
+        display: none;
+        flex-direction: column;
+        gap: 16px;
+        background-color: #fff;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        padding: 20px 40px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+      }
+
+      .menu.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">
+      <img src="portfolio.png" alt="Logo">
+      <!-- Replace with your actual logo -->
+    </div>
+
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <div class="menu" id="menu">
+      <a href="index.html" class="active">HOME.</a>
+      <a href="work.html">WORK.</a>
+      <a href="project.html">PROJECTS.</a>
+      <a href="#">CONTACT.</a>
+    </div>
+  </nav>
+
+  <script>
+    const toggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('active');
+    });
+  </script>
+
+</body>
+
+<!-- WORK SECTION -->
+<section id="work" style="padding: 80px 20px; background-color: #f9f9f9;">
+  <style>
+    /* Work heading styles */
+    #work h1 {
+      text-align: center;
+      font-size: 64px;
+      font-weight: 900;
+      background: linear-gradient(to right, #007CF0, #00DFD8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 10px;
+    }
+
+    #work .underline {
+      width: 60px;
+      height: 4px;
+      background: #00bfff;
+      border-radius: 10px;
+      margin: 0 auto 40px;
+      animation: grow 1s ease forwards;
+    }
+
+    @keyframes grow {
+      from {
+        width: 0;
+        opacity: 0;
+      }
+      to {
+        width: 60px;
+        opacity: 1;
+      }
+    }
+
+    /* Project Grid */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .project-card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .project-card h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: #222;
+    }
+
+    .project-card p {
+      font-size: 15px;
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .tag {
+      background-color: #eee;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 13px;
+      color: #333;
+    }
+
+    .project-card a {
+      text-align: center;
+      padding: 10px 16px;
+      background: #007CF0;
+      color: white;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .project-card a:hover {
+      background: #005bb5;
+    }
+
+    @media (max-width: 600px) {
+      #work h1 {
+        font-size: 42px;
+      }
+    }
+  </style>
+
+  <!-- Title + Underline -->
+  <h1>WORK</h1>
+  <div class="underline"></div>
+
+  <!-- Project Grid -->
+  <div class="projects-grid">
+    <!-- Project 1 -->
+    <div class="project-card">
+      <h3>E-Commerce Website</h3>
+      <p>A full-featured fashion & lifestyle e-commerce site with product listing, secure checkout, and admin panel.</p>
+      <div class="tags">
+        <div class="tag">HTML</div>
+        <div class="tag">CSS</div>
+        <div class="tag">JavaScript</div>
+        <div class="tag">Razorpay</div>
+      </div>
+      <a href="https://ritamfashion.com" target="_blank">View Project</a>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="project-card">
+      <h3>Card Casa Game</h3>
+      <p>A multiplayer strategy card game built from scratch with unique characters and interactive gameplay.</p>
+      <div class="tags">
+        <div class="tag">HTML</div>
+        <div class="tag">Figma</div>
+        <div class="tag">Game Design</div>
+      </div>
+      <a href="cardcasa.png" target="_blank">View Project</a>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="project-card">
+      <h3>Inclusive Education Platform</h3>
+      <p>A web platform supporting children with special needs, featuring accessible learning tools and resources.</p>
+      <div class="tags">
+        <div class="tag">React</div>
+        <div class="tag">UI/UX</div>
+        <div class="tag">Accessibility</div>
+      </div>
+      <a href="#" target="_blank">View Project</a>
+    </div>
+  </div>
+</section>
+<!-- footer -->
+ <!-- FOOTER SECTION -->
+<footer id="site-footer" style="background-color: #111; color: #fff; padding: 60px 20px 40px; text-align: center; position: relative;">
+  <style>
+    #site-footer .footer-container {
+      max-width: 1000px;
+      max-height: 1000px;
+      margin: auto;
+    }
+
+    #site-footer .footer-name {
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+
+    #site-footer .footer-socials {
+      margin: 20px 0;
+    }
+
+    #site-footer .footer-socials a {
+      margin: 0 12px;
+      color: #00c2ff;
+      text-decoration: none;
+      font-size: 18px;
+      transition: color 0.3s ease;
+    }
+
+    #site-footer .footer-socials a:hover {
+      color: #28e0c4;
+    }
+
+    #site-footer .footer-bottom {
+      font-size: 14px;
+      color: #bbb;
+      margin-top: 20px;
+    }
+
+    /* Scroll to top button */
+    #scroll-top {
+      position: absolute;
+      top: -20px;
+      right: 20px;
+      background-color: #00c2ff;
+      color: #111;
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      font-size: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      transition: background-color 0.3s ease;
+    }
+
+    #scroll-top:hover {
+      background-color: #28e0c4;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+
+  <!-- Scroll to Top Button -->
+  <button id="scroll-top" title="Go to top">↑</button>
+
+  <div class="footer-container">
+    <div class="footer-name">Sarthak Mule</div>
+
+    <div class="footer-socials">
+      <a href="mailto:sarthakmule2@gmail.com" target="_blank">Email</a>
+      <a href="https://www.linkedin.com/in/sarthak-mule/" target="_blank">LinkedIn</a>
+      <a href="https://github.com/sarthakmule" target="_blank">GitHub</a>
+    </div>
+
+    <div class="footer-bottom">
+      © 2025 Sarthak Mule. All rights reserved.
+    </div>
+  </div>
+
+  <!-- Scroll to Top Script -->
+  <script>
+    const scrollBtn = document.getElementById("scroll-top");
+    scrollBtn.onclick = () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+  </script>
+</footer>
+
+</body>
+</html>
