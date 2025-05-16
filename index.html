@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>UX Portfolio</title>
+  
+<!-- navigation bar -->
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 40px;
+      background-color: #fff;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      position: relative;
+    }
+
+    .navbar .logo img {
+      height: 40px;
+    }
+
+    .menu {
+      display: flex;
+      gap: 30px;
+    }
+
+    .menu a {
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 600;
+      color: #888;
+      text-transform: uppercase;
+      transition: color 0.3s ease;
+    }
+
+    .menu a.active {
+      color: #000;
+    }
+
+    .menu a:hover {
+      color: #444;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+
+    .menu-toggle span {
+      width: 25px;
+      height: 3px;
+      background-color: #333;
+      transition: 0.3s;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      .menu {
+        display: none;
+        flex-direction: column;
+        gap: 16px;
+        background-color: #fff;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        padding: 20px 40px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+      }
+
+      .menu.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">
+      <img src="portfolio.png" alt="Logo">
+      <!-- Replace with your actual logo -->
+    </div>
+
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <div class="menu" id="menu">
+      <a href="index.html" class="active">HOME.</a>
+      <a href="work.html">WORK.</a>
+      <a href="project.html">PROJECTS.</a>
+      <a href="contact.html">CONTACT.</a>
+    </div>
+  </nav>
+
+  <script>
+    const toggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('active');
+    });
+  </script>
+
+</body>
+<!-- end of navigationbar -->
+<!-- Namaste Section -->
+<section id="namaste-section" style="background-color: #2e2ca6; padding: 60px 0;">
+  <style>
+    .namaste-wrapper {
+      text-align: center;
+      position: relative;
+      font-family: 'Arial Black', sans-serif;
+    }
+
+    .namaste-text {
+      font-size: 60px;
+      color: #ffd500;
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+
+    .eyes-container {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+    }
+
+    .eye {
+      width: 120px;
+      height: 160px;
+      background: hotpink;
+      border-radius: 60px 60px 0 0;
+      position: relative;
+      overflow: hidden;
+      animation: blink 5s infinite;
+    }
+
+    .pupil {
+      width: 60px;
+      height: 60px;
+      background: white;
+      border-radius: 50%;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .iris {
+      width: 25px;
+      height: 25px;
+      background: black;
+      border-radius: 50%;
+      position: relative;
+      transition: all 0.1s ease;
+    }
+
+    .shine {
+      width: 6px;
+      height: 6px;
+      background: yellow;
+      border-radius: 50%;
+      position: absolute;
+      top: 4px;
+      left: 4px;
+    }
+
+    /* @keyframes blink {
+      0%, 90%, 100% {
+        height: 160px;
+      }
+      92%, 98% {
+        height: 20px;
+      }
+    } */
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .eye {
+        width: 80px;
+        height: 120px;
+        border-radius: 40px 40px 0 0;
+      }
+
+      .pupil {
+        width: 40px;
+        height: 40px;
+      }
+
+      .iris {
+        width: 16px;
+        height: 16px;
+      }
+
+      .namaste-text {
+        font-size: 40px;
+      }
+    }
+  </style>
+
+  <div class="namaste-wrapper">
+    <div class="namaste-text">HELLO!</div>
+    <div class="eyes-container">
+      <div class="eye">
+        <div class="pupil">
+          <div class="iris" id="left-eye">
+            <div class="shine"></div>
+          </div>
+        </div>
+      </div>
+      <div class="eye">
+        <div class="pupil">
+          <div class="iris" id="right-eye">
+            <div class="shine"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const leftEye = document.getElementById("left-eye");
+    const rightEye = document.getElementById("right-eye");
+
+    document.addEventListener("mousemove", (e) => {
+      const eyes = [leftEye, rightEye];
+      eyes.forEach(eye => {
+        const rect = eye.getBoundingClientRect();
+        const eyeCenterX = rect.left + rect.width / 2;
+        const eyeCenterY = rect.top + rect.height / 2;
+        const dx = e.clientX - eyeCenterX;
+        const dy = e.clientY - eyeCenterY;
+        const angle = Math.atan2(dy, dx);
+        const radius = 5; // movement range
+
+        const x = Math.cos(angle) * radius;
+        const y = Math.sin(angle) * radius;
+
+        eye.style.transform = `translate(${x}px, ${y}px)`;
+      });
+    });
+  </script>
+</section>
+<!-- end of namaste section -->
+<section class="intro-section">
+  <style>
+    .intro-section {
+      background: linear-gradient(to right, #f9f9f9, #f0faff);
+      padding: 80px 20px;
+      font-family: 'Segoe UI', sans-serif;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .intro-container {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 60px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1.2s ease-out forwards;
+    }
+
+    .intro-text {
+      flex: 1;
+      color: #333;
+    }
+
+    .intro-text h1 {
+      font-size: 52px;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      font-weight: 800;
+      color: #1c1c1c;
+    }
+
+    .intro-text p {
+      font-size: 18px;
+      line-height: 1.7;
+      color: #444;
+      margin-bottom: 20px;
+    }
+
+    .intro-image {
+      flex: 1;
+      text-align: center;
+    }
+
+    .intro-image img {
+      max-width: 300px;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .intro-container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .intro-text h1 {
+        font-size: 36px;
+      }
+
+      .intro-image img {
+        max-width: 200px;
+      }
+    }
+
+    /* Optional Decorative Wave */
+    .wave-bg {
+      position: absolute;
+      right: -100px;
+      bottom: -80px;
+      width: 350px;
+      height: 350px;
+      background: #d9f3ff;
+      border-radius: 45% 55% 60% 40% / 60% 40% 60% 40%;
+      z-index: 0;
+      filter: blur(60px);
+    }
+    .resume-section {
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .resume-btn {
+      display: inline-block;
+      background-color: #111;
+      color: #fff;
+      font-weight: bold;
+      font-size: 16px;
+      padding: 14px 36px;
+      border-radius: 40px;
+      text-decoration: none;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+    }
+
+    .resume-btn:hover {
+      background-color: #333;
+      transform: translateY(-2px);
+    }
+  </style>
+
+  <div class="intro-container">
+    <div class="intro-text">
+      <h1>Pleasure to<br>meet you!</h1>
+      <p>Hi there! I’m Sarthak Mule</p>
+      <p>I love learning how people think and behave, and I leverage research to design user-centered products and experiences that solve both user and business problems. My process is hands-on, collaborative, and iterative.</p>
+      <p>Although I have a holistic view of UX design, my main focus is interaction design, user research, and usability testing.</p>
+      <p>I chose UX design because poorly designed products frustrated me. Now, I strive to design impactful, meaningful experiences and enjoy using emerging technologies to improve lives.</p>
+    </div>
+    <div class="intro-image">
+      <img src="images.jpg" alt="Illustration of Kamalesh" />
+    </div>
+  </div>
+  <div class="wave-bg"></div>
+  <div class="resume-section">
+    <a href="Sarthak_resume.pdf" download class="resume-btn">
+      RESUME
+    </a>
+  </div>
+</section>
+
+<!-- end of  -->
+
+<!-- SKILLS SECTION -->
+<section id="skills" style="margin-top: 80px; padding: 40px 20px; background-color: #ffffff; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.08); max-width: 1000px; margin-left: auto; margin-right: auto;">
+
+  <style>
+    #skills .skills-heading {
+      text-align: center;
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    #skills .skills-heading svg {
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    #skills .skills-heading h1 {
+      font-size: 64px;
+      font-weight: 900;
+      background: linear-gradient(to right, #1f0ad9, #28e0c4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 10px;
+    }
+
+    #skills .skills-category {
+      margin-top: 40px;
+    }
+
+    #skills .skills-category h3 {
+      font-size: 20px;
+      font-weight: 600;
+      color: #111;
+      margin-bottom: 20px;
+    }
+
+    #skills .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    #skills .skill-tag {
+      background-color: #333;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-size: 15px;
+      transition: background 0.3s ease, transform 0.2s ease;
+      cursor: default;
+    }
+
+    #skills .skill-tag:hover {
+      background-color: #00c2ff;
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 600px) {
+      #skills .skills-heading h1 {
+        font-size: 42px;
+      }
+    }
+  </style>
+
+  <div class="skills-heading">
+    <svg width="80" height="10" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 5 Q 10 0, 20 5 T 40 5 T 60 5 T 80 5" fill="none" stroke="#00c2ff" stroke-width="2"/>
+    </svg>
+    <h1>SKILLS</h1>
+  </div>
+
+  <div class="skills-category">
+    
+    <div class="skill-tags">
+      <div class="skill-tag">UX/UI</div>
+      <div class="skill-tag">UX Research</div>
+      <div class="skill-tag">Usability Testing</div>
+      <div class="skill-tag">Interaction Design</div>
+      <div class="skill-tag">UI Prototyping</div>
+      <div class="skill-tag">Storyboarding</div>
+      <div class="skill-tag">Analytics</div>
+     
+      
+    </div>
+  </div>
+
+</section>
+
+
+
+
+
+
+ 
+ <!-- EXPERIENCE HEADING SECTION -->
+<section id="experience-heading" style="text-align: center; margin: 80px 0 40px;">
+  <style>
+    #experience-heading h1 {
+      font-size: 64px;
+      font-weight: 900;
+      background: linear-gradient(to right, #1f0ad9, #00DFD8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin: 10px 0 0;
+    }
+
+    #experience-heading svg {
+      margin-bottom: 10px;
+    }
+
+    @media (max-width: 600px) {
+      #experience-heading h1 {
+        font-size: 42px;
+      }
+    }
+  </style>
+
+  <!-- Decorative Wavy Line -->
+  <svg width="60" height="10" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 5 Q 10 0, 20 5 T 40 5 T 60 5" fill="none" stroke="#00bfff" stroke-width="2"/>
+  </svg>
+
+  <!-- Gradient Heading -->
+  <h1>EXPERIENCE</h1>
+</section>
+<!-- end of experience heading section -->
+
+<!-- Work Experience -->
+  <style>
+  
+    
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f8f8f8;
+      margin: 0;
+      padding: 40px;
+    }
+
+    .timeline-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .arrow {
+      font-size: 1.5rem;
+      background: #c0efef;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+
+    .arrow:hover {
+      background: #9ddede;
+    }
+
+    .timeline {
+      display: flex;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      position: relative;
+      padding: 40px 0;
+      gap: 60px;
+    }
+
+    .timeline::-webkit-scrollbar {
+      display: none;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      height: 6px;
+      background: #c0efef;
+      top: 100px;
+      left: 0;
+      width: 100%;
+      z-index: 0;
+    }
+
+    .event {
+      position: relative;
+      min-width: 280px;
+      background: #fff;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      z-index: 1;
+    }
+
+    .event img {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+      border: 4px solid #3fd1d1;
+      border-radius: 50%;
+      background: white;
+      margin-top: -60px;
+      margin-bottom: 10px;
+    }
+
+    .date {
+      font-weight: bold;
+      color: #777;
+      margin: 10px 0;
+    }
+
+    .desc {
+      font-size: 14px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  
+
+  <div class="timeline-wrapper">
+    <button class="arrow" onclick="scrollTimeline(-1)">&#8592;</button>
+    
+    <div class="timeline" id="timeline">
+      <!-- Event 1 -->
+      <div class="event">
+        <img src="11_1-5.png" alt="sunflag Logo">
+        <div class="date">December, 2024</div>
+        <div class="desc">
+         Frontend Developer as intern - Gained practical exposure to software development in a real-world industrial setting.s
+        </div>
+      </div>
+
+      <!-- Event 2 -->
+      <div class="event">
+        <div class="date">Project</div>
+        <div class="desc">
+          Developed a software solution for the SMS Process Log Sheet to digitalize daily heat preparation records, replacing the manual register system. Enhanced efficiency, accuracy, and data management by enabling computerized logging of daily reports.
+        </div>
+      </div>
+
+      <!-- Event 3 -->
+      <div class="event">
+        
+        <div class="date"></div>
+        <div class="desc">
+           Worked closely with industry professionals, refining my ability to communicate technical solutions and collaborate effectively in a professional environment.
+        </div>
+      </div>
+    </div>
+
+    <button class="arrow" onclick="scrollTimeline(1)">&#8594;</button>
+  </div>
+
+  <script>
+    function scrollTimeline(direction) {
+      const timeline = document.getElementById('timeline');
+      const scrollAmount = 320;
+      timeline.scrollBy({
+        left: scrollAmount * direction,
+        behavior: 'smooth'
+      });
+    }
+  </script>
+
+
+
+<!-- End of work experience -->
+
+
+<!-- FOOTER SECTION -->
+<footer id="site-footer" style="background-color: #111; color: #fff; padding: 60px 20px 40px; text-align: center; position: relative;">
+  <style>
+    #site-footer .footer-container {
+      max-width: 1000px;
+      max-height: 1000px;
+      margin: auto;
+    }
+
+    #site-footer .footer-name {
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+
+    #site-footer .footer-socials {
+      margin: 20px 0;
+    }
+
+    #site-footer .footer-socials a {
+      margin: 0 12px;
+      color: #00c2ff;
+      text-decoration: none;
+      font-size: 18px;
+      transition: color 0.3s ease;
+    }
+
+    #site-footer .footer-socials a:hover {
+      color: #28e0c4;
+    }
+
+    #site-footer .footer-bottom {
+      font-size: 14px;
+      color: #bbb;
+      margin-top: 20px;
+    }
+
+    /* Scroll to top button */
+    #scroll-top {
+      position: absolute;
+      top: -20px;
+      right: 20px;
+      background-color: #00c2ff;
+      color: #111;
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      font-size: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      transition: background-color 0.3s ease;
+    }
+
+    #scroll-top:hover {
+      background-color: #28e0c4;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+
+  <!-- Scroll to Top Button -->
+  <button id="scroll-top" title="Go to top">↑</button>
+
+  <div class="footer-container">
+    <div class="footer-name">Sarthak Mule</div>
+
+    <div class="footer-socials">
+      <a href="mailto:sarthakmule2@gmail.com" target="_blank">Email</a>
+      <a href="https://www.linkedin.com/in/sarthak-mule/" target="_blank">LinkedIn</a>
+      <a href="https://github.com/sarthakmule" target="_blank">GitHub</a>
+    </div>
+
+    <div class="footer-bottom">
+      © 2025 Sarthak Mule. All rights reserved.
+    </div>
+  </div>
+
+  <!-- Scroll to Top Script -->
+  <script>
+    const scrollBtn = document.getElementById("scroll-top");
+    scrollBtn.onclick = () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+  </script>
+</footer>
+</body>
+</html>
