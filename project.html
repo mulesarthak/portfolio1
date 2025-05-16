@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROJECT</title>
+</head>
+<body>
+    <body>
+    <!-- navigation bar -->
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 40px;
+      background-color: #fff;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      position: relative;
+    }
+
+    .navbar .logo img {
+      height: 40px;
+    }
+
+    .menu {
+      display: flex;
+      gap: 30px;
+    }
+
+    .menu a {
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 600;
+      color: #888;
+      text-transform: uppercase;
+      transition: color 0.3s ease;
+    }
+
+    .menu a.active {
+      color: #000;
+    }
+
+    .menu a:hover {
+      color: #444;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+
+    .menu-toggle span {
+      width: 25px;
+      height: 3px;
+      background-color: #333;
+      transition: 0.3s;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      .menu {
+        display: none;
+        flex-direction: column;
+        gap: 16px;
+        background-color: #fff;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        padding: 20px 40px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+      }
+
+      .menu.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">
+      <img src="portfolio.png" alt="Logo">
+      <!-- Replace with your actual logo -->
+    </div>
+
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <div class="menu" id="menu">
+      <a href="index.html" class="active">HOME.</a>
+      <a href="work.html">WORK.</a>
+      <a href="project.html">PROJECTS.</a>
+      <a href="contact.html">CONTACT.</a>
+    </div>
+  </nav>
+
+  <script>
+    const toggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('active');
+    });
+  </script>
+
+</body>
+
+<!-- end of navigation bar -->
+ <!-- start of project title -->
+  <!-- PROJECTS TITLE SECTION -->
+<section id="projects-heading" style="text-align: center; margin: 80px 0 40px;">
+  <style>
+    #projects-heading h1 {
+      font-size: 64px;
+      font-weight: 900;
+      background: linear-gradient(to right, #007CF0, #00DFD8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 10px;
+    }
+
+    #projects-heading .underline {
+      width: 60px;
+      height: 4px;
+      background: #00bfff;
+      border-radius: 10px;
+      margin: 0 auto;
+      animation: grow 1s ease forwards;
+    }
+
+    @keyframes grow {
+      from {
+        width: 0;
+        opacity: 0;
+      }
+      to {
+        width: 60px;
+        opacity: 1;
+      }
+    }
+
+    @media (max-width: 600px) {
+      #projects-heading h1 {
+        font-size: 42px;
+      }
+    }
+  </style>
+
+  <!-- Gradient Title -->
+  <h1>PROJECTS</h1>
+
+  <!-- Animated Underline -->
+  <div class="underline"></div>
+</section>
+<!-- end of project title -->
+ <!-- FLAVOURQ PROJECT SECTION -->
+<section id="flavourq" style="padding: 80px 20px; background-color: #fff;">
+  <style>
+    #flavourq h2 {
+      font-size: 48px;
+      font-weight: 800;
+      background: linear-gradient(to right, #ff512f, #dd2476);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    #flavourq p {
+      max-width: 900px;
+      margin: 0 auto 40px;
+      font-size: 17px;
+      line-height: 1.7;
+      color: #444;
+      text-align: center;
+    }
+
+    #flavourq img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    }
+
+    @media (max-width: 768px) {
+      #flavourq h2 {
+        font-size: 36px;
+      }
+
+      #flavourq p {
+        font-size: 15px;
+        padding: 0 10px;
+      }
+    }
+  </style>
+
+  <!-- Heading -->
+  <h2>Flavour – UI Prototype</h2>
+
+  <!-- Description -->
+  <p>
+    FlavourQ is a vibrant and intuitive mobile food ordering UI prototype designed for a smooth and satisfying user experience. 
+    This clickable prototype includes onboarding screens, login/sign-up flow, a dynamic food category interface, item details 
+    with pricing, cart management, and a final order confirmation screen. The interface uses engaging colors, clear CTAs, 
+    and minimalistic layouts tailored for users of all levels. Ideal for a food startup or mobile-first restaurant experience.
+  </p>
+
+  <!-- Full Width Image -->
+  <img src="uxprototype.png" alt="FlavourQ UI Prototype Flow" />
+</section>
+
+<!-- boxes -->
+ <!-- PROTOTYPE SCREEN GRID -->
+<section id="flavourq-grid" style="padding: 60px 20px; background-color: #fefefe;">
+  <style>
+    .grid-heading {
+      text-align: center;
+      font-size: 36px;
+      font-weight: bold;
+      margin-bottom: 30px;
+      color: #222;
+    }
+
+    .prototype-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .prototype-box img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease;
+    }
+
+    .prototype-box img:hover {
+      transform: scale(1.03);
+    }
+
+    @media (max-width: 768px) {
+      .grid-heading {
+        font-size: 28px;
+      }
+    }
+  </style>
+
+  <div class="grid-heading">Flavour Screens</div>
+
+  <div class="prototype-grid">
+    <!-- Replace each src with your own image -->
+    <div class="prototype-box"><img src="one.png" alt="FlavourQ screen 1"></div>
+    <div class="prototype-box"><img src="two.png" alt="FlavourQ screen 2"></div>
+    <div class="prototype-box"><img src="three.png" alt="FlavourQ screen 3"></div>
+    <div class="prototype-box"><img src="four.png" alt="FlavourQ screen 4"></div>
+    <div class="prototype-box"><img src="five.png" alt="FlavourQ screen 5"></div>
+    <div class="prototype-box"><img src="six.png" alt="FlavourQ screen 6"></div>
+    <div class="prototype-box"><img src="seven.png" alt="FlavourQ screen 7"></div>
+    <div class="prototype-box"><img src="eight.png" alt="FlavourQ screen 8"></div>
+  </div>
+</section>
+<!-- end of 1st project -->
+ <!-- 2nd project -->
+
+ <!-- PLANTO PROJECT SECTION -->
+<section id="planto" style="padding: 80px 20px; background-color: #f9f9f9;">
+  <style>
+    #planto-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      align-items: center;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    #planto h2 {
+      font-size: 48px;
+      font-weight: 800;
+      background: linear-gradient(to right, #4caf50, #00c853);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 20px;
+      text-align: center;
+      width: 100%;
+    }
+
+    .planto-image {
+      flex: 1;
+      min-width: 280px;
+      max-width: 400px;
+    }
+
+    .planto-image img {
+      width: 100%;
+      height: auto;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    }
+
+    .planto-text {
+      flex: 2;
+      min-width: 280px;
+    }
+
+    .planto-text p {
+      font-size: 17px;
+      line-height: 1.7;
+      color: #444;
+    }
+
+    @media (max-width: 768px) {
+      #planto h2 {
+        font-size: 36px;
+      }
+
+      #planto-container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .planto-text p {
+        font-size: 16px;
+      }
+    }
+  </style>
+
+  <!-- Heading -->
+  <h2>Planto – Plant Shop App</h2>
+
+  <!-- Content -->
+  <div id="planto-container">
+    <!-- Left: Image -->
+    <div class="planto-image">
+      <img src="planto.png" alt="Planto UI Mockup">
+    </div>
+
+    <!-- Right: Corrected Description -->
+    <div class="planto-text">
+      <p>
+        Planto is a user-friendly mobile app designed for plant lovers to explore and purchase a wide variety of plants. 
+        From indoor succulents and air-purifying greens to outdoor garden essentials, Planto offers a seamless shopping experience 
+        for plant enthusiasts. With categorized listings, plant care info, pricing, and a cart feature, users can easily browse, 
+        select, and order their favorite plants. The modern UI and vibrant visuals make the app both functional and engaging, 
+        ideal for home gardeners, urban plant parents, and eco-friendly shoppers.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER SECTION -->
+<footer id="site-footer" style="background-color: #111; color: #fff; padding: 60px 20px 40px; text-align: center; position: relative;">
+  <style>
+    #site-footer .footer-container {
+      max-width: 1000px;
+      max-height: 1000px;
+      margin: auto;
+    }
+
+    #site-footer .footer-name {
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+
+    #site-footer .footer-socials {
+      margin: 20px 0;
+    }
+
+    #site-footer .footer-socials a {
+      margin: 0 12px;
+      color: #00c2ff;
+      text-decoration: none;
+      font-size: 18px;
+      transition: color 0.3s ease;
+    }
+
+    #site-footer .footer-socials a:hover {
+      color: #28e0c4;
+    }
+
+    #site-footer .footer-bottom {
+      font-size: 14px;
+      color: #bbb;
+      margin-top: 20px;
+    }
+
+    /* Scroll to top button */
+    #scroll-top {
+      position: absolute;
+      top: -20px;
+      right: 20px;
+      background-color: #00c2ff;
+      color: #111;
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      font-size: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      transition: background-color 0.3s ease;
+    }
+
+    #scroll-top:hover {
+      background-color: #28e0c4;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+
+  <!-- Scroll to Top Button -->
+  <button id="scroll-top" title="Go to top">↑</button>
+
+  <div class="footer-container">
+    <div class="footer-name">Sarthak Mule</div>
+
+    <div class="footer-socials">
+      <a href="mailto:sarthakmule2@gmail.com" target="_blank">Email</a>
+      <a href="https://www.linkedin.com/in/sarthak-mule/" target="_blank">LinkedIn</a>
+      <a href="https://github.com/sarthakmule" target="_blank">GitHub</a>
+    </div>
+
+    <div class="footer-bottom">
+      © 2025 Sarthak Mule. All rights reserved.
+    </div>
+  </div>
+
+  <!-- Scroll to Top Script -->
+  <script>
+    const scrollBtn = document.getElementById("scroll-top");
+    scrollBtn.onclick = () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+  </script>
+</footer>
+
+</body>
+</html>
